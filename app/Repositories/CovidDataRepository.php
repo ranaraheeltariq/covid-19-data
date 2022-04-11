@@ -33,6 +33,6 @@ class CovidDataRepository
    	*/
 	public function country($name)
 	{
-		return Http::withoutVerifying()->get($this->api.'/countries/'.$name);
+		return Http::withoutVerifying()->get($this->api.'/countries/'.$name)->json();
 	}
 }

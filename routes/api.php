@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\CovidDataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', [CovidDataController::class, 'globalCases']);
+Route::get('countries', [CovidDataController::class, 'countries']);
+Route::get('country/{name}', [CovidDataController::class, 'country']);

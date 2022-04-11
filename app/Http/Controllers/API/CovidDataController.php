@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\CovidDataRepository;
 
@@ -19,8 +20,7 @@ class CovidDataController extends Controller
    */
   public function globalCases()
   {
-    $globalCases = $this->covidDataRepository->globalCases();
-    return view('index',['globalCases' => json_decode($globalCases, true)]);
+    return $this->covidDataRepository->globalCases();
   }
 
   /**
