@@ -19,7 +19,9 @@ class CovidDataController extends Controller
    */
   public function globalCases()
   {
-    return $this->covidDataRepository->globalCases();
+    $globalCases = $this->covidDataRepository->globalCases();
+    // dd(json_decode($globalCases, true));
+    return view('index',['globalCases' => json_decode($globalCases, true)]);
   }
 
   /**

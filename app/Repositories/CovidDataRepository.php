@@ -24,7 +24,7 @@ class CovidDataRepository
    */
 	public function countries()
 	{
-		return Http::withoutVerifying()->get($this->api.'/countries');
+		return Http::withoutVerifying()->get($this->api.'/countries')->json();
 	}
 
 	/**
